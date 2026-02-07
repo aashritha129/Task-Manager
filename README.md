@@ -1,6 +1,3 @@
-Perfect 👍 here’s a **complete, clean, evaluator-ready `README.md`** you can copy-paste directly into your project root.
-
----
 
 # 📝 Task Manager – Full Stack Web Application
 
@@ -113,10 +110,6 @@ CREATE TABLE tasks (
 );
 ```
 
-### Relationships
-
-* One user can have multiple tasks (One-to-Many)
-* Email is unique for each user
 
 ---
 
@@ -158,10 +151,15 @@ http://localhost:5000
 
 ## 📸 Screenshots
 
-Screenshots of the application UI are available in the `screenshots/` folder:
-
 * Login Page
+  <img width="1886" height="888" alt="Screenshot 2026-02-07 120616" src="https://github.com/user-attachments/assets/bff1070b-e291-49f9-a181-f5cd9f238dc6" />
 * Register Page
+  <img width="1897" height="902" alt="Screenshot 2026-02-07 120536" src="https://github.com/user-attachments/assets/a059728c-5be0-4c43-9671-aa44e333539b" />
 * Dashboard
+  <img width="1893" height="892" alt="Screenshot 2026-02-07 120639" src="https://github.com/user-attachments/assets/95ed44ea-8100-4d2e-b769-6b74cbefd16f" />
 * Task Add / Complete / Delete
+  <img width="1903" height="860" alt="Screenshot 2026-02-07 121305" src="https://github.com/user-attachments/assets/84a8877f-b6f4-4f9f-a5b8-386f7860a1da" />
+  <img width="1907" height="827" alt="Screenshot 2026-02-07 121427" src="https://github.com/user-attachments/assets/e1da947e-e42c-44e9-8bfa-827062fc0103" />
+
+
 
