@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard | Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Task Manager</h2>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3>Add New Task</h3>
+    <input id="taskTitle" placeholder="Enter task title">
+    <button onclick="addTask()">Add Task</button>
+  </div>
+
+  <div class="card">
+    <h3>Your Tasks</h3>
+    <ul id="taskList"></ul>
+  </div>
+</div>
+
+<script>
+const userId = localStorage.getItem("user_id");
+if (!userId) {
+  window.location.href = "login.html";
+}
+
+window.onload = loadTasks;
+
+function addTask() {
+  const title = taskTitle.value;
+
+  fetch("http://localhost:5000/tasks", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ user_id: userId, title })
+  })
+  .then(res => res.text())
+  .then(() => {
+    taskTitle.value = "";
+    loadTasks();
+  });
+}
+
+function loadTasks() {
+  fetch(`http://localhost:5000/tasks/${userId}`)
+    .then(res => res.json())
+    .then(tasks => {
+      taskList.innerHTML = "";
+
+      if (tasks.length === 0) {
+        taskList.innerHTML = "<li class='empty'>No tasks yet</li>";
+      }
+
+      tasks.forEach(t => {
+        const li = document.createElement("li");
+        li.className = t.status === "completed" ? "done" : "";
+
+        li.innerHTML = `
+          <span>${t.title}</span>
+          <div class="actions">
+            ${t.status !== "completed" 
+              ? `<button onclick="completeTask(${t.id})">✔</button>` 
+              : ""
+            }
+            <button onclick="deleteTask(${t.id})">🗑</button>
+          </div>
+        `;
+
+      taskList.appendChild(li);
+    });
+
+    });
+}
+
+
+function completeTask(id) {
+  fetch(`http://localhost:5000/tasks/${id}/complete`, {
+    method: "PUT"
+  })
+  .then(() => loadTasks());
+}
+
+function deleteTask(id) {
+  if (!confirm("Delete this task?")) return;
+
+  fetch(`http://localhost:5000/tasks/${id}`, {
+    method: "DELETE"
+  })
+  .then(() => loadTasks());
+}
+
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

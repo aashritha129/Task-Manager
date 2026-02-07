@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #4caf50;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.navbar button {
+  background: white;
+  color: #4caf50;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbar button:hover {
+  background: #e8f5e9;
+}
+
+
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+
+.card {
+  background: white;
+  width: 320px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+
+.card input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+
+.card button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: #4caf50;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card button:hover {
+  background: #43a047;
+}
+
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#taskList li {
+  background: #e8f5e9;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+#taskList .empty {
+  background: none;
+  color: #888;
+  text-align: center;
+  padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f4f4f4;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.done span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.actions button {
+  border: none;
+  padding: 6px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.actions button:first-child {
+  background: #4caf50;
+  color: white;
+}
+
+.actions button:last-child {
+  background: #e53935;
+  color: white;
+}
