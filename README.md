@@ -54,11 +54,6 @@ task-manager/
  │   ├── style.css
  │   ├── login.js
  │   └── tasks.js
- ├── screenshots/
- │   ├── login.png
- │   ├── register.png
- │   ├── dashboard.png
- │   └── task-actions.png
  └── README.md
 ```
 
