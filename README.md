@@ -2,6 +2,7 @@
 
 Task Manager is a simple full-stack web application that allows users to register, log in, and manage their daily tasks. Each user can create, view, complete, and delete their own tasks. The project demonstrates frontend–backend integration, REST API design, and database connectivity.
 
+
  🚀 Features
 
 * User registration and login
@@ -13,6 +14,7 @@ Task Manager is a simple full-stack web application that allows users to registe
 * Delete tasks
 * Logout functionality
 * Clean and responsive UI
+
 
 🛠️ Tech Stack
 
@@ -28,37 +30,26 @@ Backend
 * Express.js
 * MySQL
 
+
 📂 Project Structure
 
-task-manager/
- ├── backend/
- │   ├── server.js
- │   ├── db.js
- │   ├── package.json
- │   └── node_modules/
- ├── frontend/
- │   ├── login.html
- │   ├── register.html
- │   ├── dashboard.html
- │   ├── login.css
- │   ├── style.css
- │   ├── login.js
- │   └── tasks.js
+<img width="554" height="525" alt="image" src="https://github.com/user-attachments/assets/2472f2f3-5409-431f-9dcd-2c38197d5abf" />
+
 
 
 🔗 API Endpoints
 
 Authentication
 
-POST /register-Registers a new user
-POST /login-Authenticates user credentials
+* POST /register-Registers a new user
+* POST /login-Authenticates user credentials
 
 Tasks
 
-POST /tasks-Create a new task
-GET /tasks/:user_id-Fetch tasks for a specific user
-PUT /tasks/:task_id/complete-Mark a task as completed
-DELETE /tasks/:task_id-Delete a task
+* POST /tasks-Create a new task
+* GET /tasks/:user_id-Fetch tasks for a specific user
+* PUT /tasks/:task_id/complete-Mark a task as completed
+* DELETE /tasks/:task_id-Delete a task
 
 🗄️ Database Schema
 
@@ -84,13 +75,11 @@ CREATE TABLE tasks (
 
 1️⃣ Clone the repository
 
-bash
 git clone https://github.com/your-username/task-manager.git
 cd task-manager
 
 2️⃣ Backend setup
 
-bash
 cd backend
 npm install
 node server.js
