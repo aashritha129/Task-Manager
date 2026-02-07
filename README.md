@@ -33,7 +33,22 @@ Backend
 
 📂 Project Structure
 
-<img width="554" height="525" alt="image" src="https://github.com/user-attachments/assets/2472f2f3-5409-431f-9dcd-2c38197d5abf" />
+task-manager/
+ ├── backend/
+ │   ├── server.js
+ │   ├── db.js
+ │   ├── package.json
+ │   └── node_modules/
+ ├── frontend/
+ │   ├── login.html
+ │   ├── register.html
+ │   ├── dashboard.html
+ │   ├── login.css
+ │   ├── style.css
+ │   ├── login.js
+ │   └── tasks.js
+ └── README.md
+
 
 
 
@@ -53,37 +68,33 @@ Tasks
 
 🗄️ Database Schema
 
-sql
-CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100),
-  email VARCHAR(100) UNIQUE,
-  password VARCHAR(255)
-);
+Users Table
 
-CREATE TABLE tasks (
-  task_id INT AUTO_INCREMENT PRIMARY KEY,
-  user_id INT,
-  title VARCHAR(255),
-  status VARCHAR(20),
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id)
-);
+* Stores user account details
+* Fields: user ID (primary key), name, email, password
+* Email is unique for each user
+* Used for user registration and login
+
+Tasks Table
+
+* Stores tasks created by users
+* Fields: task ID (primary key), user ID (foreign key), title, status
+* Each task belongs to one user
+* One user can have multiple tasks
 
 
 ⚙️ Setup Instructions
 
 1️⃣ Clone the repository
 
-git clone https://github.com/your-username/task-manager.git
-cd task-manager
+* git clone https://github.com/your-username/task-manager.git
+* cd task-manager
 
 2️⃣ Backend setup
 
-cd backend
-npm install
-node server.js
-
+* cd backend
+* npm install
+* node server.js
 
 Backend runs on:
 
